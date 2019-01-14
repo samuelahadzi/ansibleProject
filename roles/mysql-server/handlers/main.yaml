@@ -1,0 +1,3 @@
+---
+- name: Restart MySQL
+  command: /etc/init.d/mysql restart

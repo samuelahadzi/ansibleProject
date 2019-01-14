@@ -1,0 +1,6 @@
+---
+#Le groupe 'clients' contient client1 et client2
+- hosts: clients
+  roles:
+    - ansible-server
+    - setup-agent

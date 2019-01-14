@@ -1,0 +1,24 @@
+---
+- name: install cron
+  apt:
+    name: cron
+    state: latest
+
+- name: copying file from directory to remote machine
+  copy:
+    src: /etc/ansible/playbooks/agent.yaml
+    dest: /etc/ansible/playbooks/agent.yaml
+
+- name: Pulling role socle from gitlab
+  git:
+    repo: http://10.10.20.8/root/socle.git
+    dest: /etc/ansible/roles/socle
+    update: yes
+    version: master
+
+- name: launching agent.yaml every hour
+  cron:
+    name: lauching the cron tab
+    minute: 0
+    hour: 1
+    job: "ansible-playbook /etc/ansible/playbooks/agent.yaml"

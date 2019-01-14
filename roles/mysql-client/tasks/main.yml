@@ -1,0 +1,7 @@
+---
+- name: verification de la connexion au client.
+  ping:
+- name: Installation package mysql-client
+  apt:
+    name: mysql-client
+    state: present

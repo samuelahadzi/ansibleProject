@@ -1,0 +1,21 @@
+---
+- name: update list of deposits
+  apt:
+    update_cache: yes
+
+- name: install python-software-properties
+  apt:
+    name: python-software-properties
+
+- name: add repository
+  apt_repository:
+    repo: 'ppa:ansible/ansible'
+
+- name: update list of deposits
+  apt:
+    update-cache: yes
+
+- name: install ansible
+  apt:
+    name: ansible
+    state: latest

@@ -1,0 +1,8 @@
+---
+- hosts: client2
+  roles:
+    - mysql-server
+
+- hosts: client1
+  roles:
+    - mysql-client

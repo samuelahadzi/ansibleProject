@@ -1,0 +1,13 @@
+---
+#Le groupe 'clients' contient client1 et client2
+- hosts: localhost
+  tasks:
+    - name: pull from git
+      git:
+        repo: http://10.10.20.8/root/socle
+        dest: /etc/ansible/roles/socle
+        update: yes
+        version: master
+    
+  roles:
+    - socle
